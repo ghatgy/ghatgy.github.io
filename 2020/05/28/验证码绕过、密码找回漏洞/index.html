@@ -10,8 +10,8 @@
 </ol>
 </li>
 </ul>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320143715.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320143752.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320143715.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320143752.png" alt="" loading="lazy"></p>
 <h1 id="二、常见的验证码绕过"><a href="#二、常见的验证码绕过" class="headerlink" title="二、常见的验证码绕过"></a>二、常见的验证码绕过</h1><ol>
 <li><p>前端验证验证码，并没有后端验证。<u>直接抓包然后进行跑数据包，反正有没有验证码的阻碍</u></p>
 </li>
@@ -35,16 +35,16 @@
 <li><p>有一类验证码，他并不是区分用户是计算机还是人的公共全自动程序，他是用来证明你的身份的，比如你登录微信，支付宝，支持短信验证码登录，像这类验证码他实际上是用来区分你的身份的。</p>
 </li>
 <li><p>当你QQ密码忘记密码的时候，你需要找回密码，然后他要求把APP显示的动态密码填入框里面，一般而言手机验证码时间都有5-30分钟，如果他没有做尝试限制的话我们是不是可以进行穷举？然后直接跑出验证码然后就修改他人密码呢？</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320144912.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320144912.png" alt="" loading="lazy"></p>
 </li>
 </ul>
 <h4 id="列："><a href="#列：" class="headerlink" title="列："></a>列：</h4><ul>
 <li>第一种就是找回密码，往邮箱发送明文或密文的密码或者验证码（手机短信验证就是往你手机号码发验证码）通过这样的方法来判断是否是本人</li>
 </ul>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320145145.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320145145.png" alt="" loading="lazy"></p>
 <ul>
 <li><p>第二种发送一个重置密码的链接到邮箱</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320145228.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200320145228.png" alt="" loading="lazy"></p>
 <h3 id="上述的密码找回方法会有什么样的漏洞呢？"><a href="#上述的密码找回方法会有什么样的漏洞呢？" class="headerlink" title="上述的密码找回方法会有什么样的漏洞呢？"></a>上述的密码找回方法会有什么样的漏洞呢？</h3><ol>
 <li><p>验证码发送后前端返回==（wooyun-2016-0172266）==</p>
 </li>

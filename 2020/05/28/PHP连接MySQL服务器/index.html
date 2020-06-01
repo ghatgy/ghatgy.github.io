@@ -17,7 +17,7 @@
 </li>
 </ul>
 <p>返回值：==如果连接成功，则返回MySQLi连接对象。如果失败，则返回FALSE==。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528124714.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528124714.png" alt="" loading="lazy"></p>
 <h2 id="运算符"><a href="#运算符" class="headerlink" title="@运算符"></a>@运算符</h2><ul>
 <li><p>PHP 支持一个错误控制运算符@。当将其放置在一个 PHP 表达式之前，该表达式可能产生的任何错误信息都被忽略掉(不包括语法错误)。</p>
 </li>
@@ -44,14 +44,14 @@
 <li><p>参数：没有参数。</p>
 </li>
 </ul>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528125046.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528125046.png" alt="" loading="lazy"></p>
 <h2 id="mysqli-close"><a href="#mysqli-close" class="headerlink" title="mysqli_close()"></a>mysqli_close()</h2><ul>
 <li><p>描述：关闭先前打开的数据库连接</p>
 </li>
 <li><p>语法：<code>bool mysqli_close ( mysqli $link )</code></p>
 </li>
 </ul>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528125212.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528125212.png" alt="" loading="lazy"></p>
 <h1 id="选择当前数据库"><a href="#选择当前数据库" class="headerlink" title="选择当前数据库"></a>选择当前数据库</h1><ul>
 <li><p>描述：一个数据库服务器可能包含很多的数据库，通常需要针对某个具体的数据库进行编程</p>
 </li>
@@ -60,7 +60,7 @@
 <li><p>返回值：如果成功返回TRUE，失败则返回FALSE。</p>
 </li>
 </ul>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528125436.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528125436.png" alt="" loading="lazy"></p>
 <h1 id="设置客户端字符集"><a href="#设置客户端字符集" class="headerlink" title="设置客户端字符集"></a>设置客户端字符集</h1><ul>
 <li><p>描述：设置默认字符编码</p>
 </li>
@@ -69,7 +69,7 @@
 <li><p>返回：成功时返回 TRUE， 或者在失败时返回 FALSE。</p>
 </li>
 </ul>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528125802.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528125802.png" alt="" loading="lazy"></p>
 <h1 id="执行各种SQL语句"><a href="#执行各种SQL语句" class="headerlink" title="执行各种SQL语句"></a>执行各种SQL语句</h1><h2 id="mysqli-query"><a href="#mysqli-query" class="headerlink" title="mysqli_query()"></a>mysqli_query()</h2><p> 描述：发送一条 MySQL 查询；</p>
 <p>语法：<code>resource mysqli_query(mysqli $link , string $query )</code></p>
 <p>参数：</p>
@@ -81,68 +81,68 @@
 </ul>
 <p>说明：mysqli_query() 仅对 SELECT，SHOW 或 DESCRIBE 语句返回一个==<strong>mysqli_result结果集对象</strong>==，如果查询执行不正确则返回 FALSE。对于其它类型的 SQL 语句，mysqli_query()在执行成功时返回 TRUE，出错时返回 FALSE。非 FALSE 的返回值意味着查询是合法的并能够被服务器执行。</p>
 <p> 注意：==查询字符串不应以分号结束，和命令行模式下有区别。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130012.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130026.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130012.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130026.png" alt="" loading="lazy"></p>
 <h2 id="mysqli-free-result"><a href="#mysqli-free-result" class="headerlink" title="mysqli_free_result()"></a>mysqli_free_result()</h2><p>描述：释放与结果集相关联的内存</p>
 <p>语法：<code>void mysqli_free_result ( mysqli_result $result )</code></p>
 <p>参数：$result为结果集对象。</p>
 <p><strong>内存中的变量何时消失：</strong></p>
 <p>==(1)网页执行完毕，所有与本网页相关的变量自动销毁；==</p>
 <p>==(2)手动销毁指定的变量。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130301.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130301.png" alt="" loading="lazy"></p>
 <h1 id="从结果集获取一行数据"><a href="#从结果集获取一行数据" class="headerlink" title="从结果集获取一行数据"></a>从结果集获取一行数据</h1><h2 id="mysqli-fetch-row"><a href="#mysqli-fetch-row" class="headerlink" title="mysqli_fetch_row()"></a>mysqli_fetch_row()</h2><p>描述：从结果集中取得一行作为==枚举数组；==</p>
 <p>格式：<code>array mysqli_fetch_row ( mysqli_result $result )</code> </p>
 <p>返回：返回根据所取得的行生成的数组，如果没有更多行则返回 FALSE。</p>
 <p>说明：mysqli_fetch_row() 从指定的结果标识关联的结果集中取得一行数据并作为数组返回。每个结果的列储存在一个数组的单元中，偏移量从 0 开始。</p>
 <p> 提示：==依次调用mysqli_fetch_row()将返回结果集中的下一行，如果没有更多行则返回FALSE。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130552.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130602.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130552.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528130602.png" alt="" loading="lazy"></p>
 <h2 id="mysqli-fetch-assoc"><a href="#mysqli-fetch-assoc" class="headerlink" title="mysqli_fetch_assoc()"></a>mysqli_fetch_assoc()</h2><p>描述：从结果集中取得一行作为==<strong>关联数组</strong>==</p>
 <p>语法：<code>array mysqli_fetch_assoc ( mysqli_result  $result )</code></p>
 <p>返回值：从结果集取得的行生成的关联数组，如果没有更多行则返回 FALSE；</p>
 <p>注意：==此函数返回的字段名大小写敏感。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131107.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131107.png" alt="" loading="lazy"></p>
 <h2 id="mysqli-fetch-array"><a href="#mysqli-fetch-array" class="headerlink" title="mysqli_fetch_array()"></a>mysqli_fetch_array()</h2><p>描述：从结果集中取得一行作为<strong>关联数组，或数字数组，或二者兼有</strong>；</p>
 <p>语法：<code>array mysqli_fetch_array ( mysqli_result  $result  [, int $result_type = MYSQLI_BOTH ] )</code></p>
 <p>参数：$result_type是一个==常量==，取值：==MYSQLI_BOTH==(两者兼有，默认)、==MYSQLI_ASSOC==(关联索引)、==MYSQLI_NUM==(数字索引)</p>
 <p>返回：返回根据从结果集取得的行生成的数组，如果没有更多行则返回 FALSE。</p>
 <p>注意：==本函数返回的字段名区分大小写。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131344.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131407.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131417.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131344.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131407.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131417.png" alt="" loading="lazy"></p>
 <h2 id="mysqli-fetch-all"><a href="#mysqli-fetch-all" class="headerlink" title="mysqli_fetch_all()"></a>mysqli_fetch_all()</h2><p>描述：从结果集中取得==<strong>所有行</strong>==作为关联数组、枚举数组、或二者兼有</p>
 <p>语法：<code>mixed mysqli_fetch_all ( mysqli_result $result [, int $resulttype = MYSQLI_NUM ] )</code></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131527.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131527.png" alt="" loading="lazy"></p>
 <p>==<strong>提示：获取数据，要不是获取一条，要不是获取多条。</strong>==</p>
 <h1 id="获取记录数"><a href="#获取记录数" class="headerlink" title="获取记录数"></a>获取记录数</h1><h2 id="mysqli-num-rows"><a href="#mysqli-num-rows" class="headerlink" title="mysqli_num_rows()"></a>mysqli_num_rows()</h2><p>描述：取得结果集中行的数目</p>
 <p>语法：<code>int mysqli_num_rows ( mysqli_result $result )</code></p>
 <p>说明：mysqli_num_rows()返回结果集中行的数目。</p>
 <p>注意：==<strong>此命令仅对</strong> <strong>SELECT 语句有效</strong>==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131749.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528131749.png" alt="" loading="lazy"></p>
 <h2 id="mysqli-affected-rows"><a href="#mysqli-affected-rows" class="headerlink" title="mysqli_affected_rows()"></a>mysqli_affected_rows()</h2><p>描述：取得前一次 MySQL 操作所影响的记录行数；</p>
 <p>语法：<code>int mysqli_affected_rows ( mysqli $link )</code></p>
 <p>说明：取得最近一次与 $link 关联的 SELECT、INSERT、UPDATE 或 DELETE 查询所影响的记录行数。 </p>
 <p>注意：==如果最近一次查询失败，函数返回-1。当使用UPDATE查询，MySQL不会将原值和新值一样的值更新，返回值不一定就是查询条件所符合的记录，只有修改过的记录数才会被返回。==</p>
-<h1 id="综合案例：学生信息管理"><a href="#综合案例：学生信息管理" class="headerlink" title="综合案例：学生信息管理"></a>综合案例：学生信息管理</h1><h2 id="学生信息表结构student"><a href="#学生信息表结构student" class="headerlink" title="学生信息表结构student"></a>学生信息表结构student</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132019.png" alt=""></p>
-<h2 id="连接数据库的公共文件conn-php"><a href="#连接数据库的公共文件conn-php" class="headerlink" title="连接数据库的公共文件conn.php"></a>连接数据库的公共文件conn.php</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132037.png" alt=""></p>
+<h1 id="综合案例：学生信息管理"><a href="#综合案例：学生信息管理" class="headerlink" title="综合案例：学生信息管理"></a>综合案例：学生信息管理</h1><h2 id="学生信息表结构student"><a href="#学生信息表结构student" class="headerlink" title="学生信息表结构student"></a>学生信息表结构student</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132019.png" alt="" loading="lazy"></p>
+<h2 id="连接数据库的公共文件conn-php"><a href="#连接数据库的公共文件conn-php" class="headerlink" title="连接数据库的公共文件conn.php"></a>连接数据库的公共文件conn.php</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132037.png" alt="" loading="lazy"></p>
 <h2 id="学生信息列表页list-php"><a href="#学生信息列表页list-php" class="headerlink" title="学生信息列表页list.php"></a>学生信息列表页list.php</h2><p><strong>1）制作显示学生信息的表格</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132145.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132145.png" alt="" loading="lazy"></p>
 <p><strong>2）PHP程序部分</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132208.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132217.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132227.png" alt=""></p>
-<h2 id="删除学生信息delete-php"><a href="#删除学生信息delete-php" class="headerlink" title="删除学生信息delete.php"></a>删除学生信息delete.php</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132304.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132315.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132208.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132217.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132227.png" alt="" loading="lazy"></p>
+<h2 id="删除学生信息delete-php"><a href="#删除学生信息delete-php" class="headerlink" title="删除学生信息delete.php"></a>删除学生信息delete.php</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132304.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132315.png" alt="" loading="lazy"></p>
 <h2 id="添加学生信息add-php"><a href="#添加学生信息add-php" class="headerlink" title="添加学生信息add.php"></a>添加学生信息add.php</h2><p><strong>1）制作添加学生的表单</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132421.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132432.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132441.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132421.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132432.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132441.png" alt="" loading="lazy"></p>
 <p><strong>2）处理表单提交数据</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132508.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132508.png" alt="" loading="lazy"></p>
 <h1 id="PHP处理复选框数据"><a href="#PHP处理复选框数据" class="headerlink" title="PHP处理复选框数据"></a>PHP处理复选框数据</h1><h2 id="复选框表单处理"><a href="#复选框表单处理" class="headerlink" title="复选框表单处理"></a>复选框表单处理</h2><p>==<strong>PHP会把name = “hobby[]”看成添加一个数组元素，而HTML把它看成一个字符串</strong>==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132633.png" alt=""></p>
-<h2 id="PHP如何处理复选框数据"><a href="#PHP如何处理复选框数据" class="headerlink" title="PHP如何处理复选框数据"></a>PHP如何处理复选框数据</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132659.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132713.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132633.png" alt="" loading="lazy"></p>
+<h2 id="PHP如何处理复选框数据"><a href="#PHP如何处理复选框数据" class="headerlink" title="PHP如何处理复选框数据"></a>PHP如何处理复选框数据</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132659.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528132713.png" alt="" loading="lazy"></p>
 <p>==<strong>提示：将多个爱好连成一个值，并写入到数据库某个字段中。只需要一个字段来存储爱好。</strong>==</p>
 </div><div id="reward-container"><span class="hty-icon-button button-glow" id="reward-button" title="Donate" onclick="var qr = document.getElementById(&quot;qr&quot;); qr.style.display = (qr.style.display === &quot;none&quot;) ? &quot;block&quot; : &quot;none&quot;;"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-hand-coin-line"></use></svg></span><div id="reward-comment">I'm so cute. Please give me money.</div><div id="qr" style="display:none;"><div style="display:inline-block"><a href="https://gitee.com/ghat/blogimage/raw/master/img/20200406081241.png" target="_blank" rel="noopener"><img loading="lazy" src="https://gitee.com/ghat/blogimage/raw/master/img/20200406081241.png" alt="支付宝" title="支付宝"></a><div><span style="color:#00A3EE"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-alipay-line"></use></svg></span></div></div><div style="display:inline-block"><a href="https://gitee.com/ghat/blogimage/raw/master/img/20200406081332.png" target="_blank" rel="noopener"><img loading="lazy" src="https://gitee.com/ghat/blogimage/raw/master/img/20200406081332.png" alt="微信支付" title="微信支付"></a><div><span style="color:#2DC100"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-wechat-pay-line"></use></svg></span></div></div></div></div><ul class="post-copyright"><li class="post-copyright-author"><strong>Post author: </strong>ghatgy</li><li class="post-copyright-link"><strong>Post link: </strong><a href="http://yoursite.com/2020/05/28/PHP%E8%BF%9E%E6%8E%A5MySQL%E6%9C%8D%E5%8A%A1%E5%99%A8/" title="PHP连接MySQL服务器">http://yoursite.com/2020/05/28/PHP%E8%BF%9E%E6%8E%A5MySQL%E6%9C%8D%E5%8A%A1%E5%99%A8/</a></li><li class="post-copyright-license"><strong>Copyright Notice: </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank" rel="noopener" title="CC BY-NC-SA 4.0 "><svg class="icon"><use xlink:href="#icon-creative-commons-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-by-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-nc-line"></use></svg><svg class="icon"><use xlink:href="#icon-creative-commons-sa-line"></use></svg></a> unless stating additionally.</li></ul></section></article><div class="post-nav"><div class="post-nav-item"><a class="post-nav-prev" href="/2020/05/28/SESSION/" rel="prev" title="SESSION"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-left-s-line"></use></svg><span class="post-nav-text">SESSION</span></a></div><div class="post-nav-item"><a class="post-nav-next" href="/2020/05/28/PHP%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95%E8%A7%84%E5%88%99/" rel="next" title="PHP基本语法规则"><span class="post-nav-text">PHP基本语法规则</span><svg class="icon" aria-hidden="true"><use xlink:href="#icon-arrow-right-s-line"></use></svg></a></div></div><div id="comment"><div class="comment-tooltip text-center"><span>若您无 GitHub 账号，可直接在下方匿名评论。</span><br><span>若您想及时得到回复提醒，建议跳转 GitHub Issues 评论。</span><br><span>若没有本文 Issue，您可以使用 Comment 模版新建。</span><br><a class="hty-button hty-button--raised" id="github-issues" href="https://github.com/YunYouJun/yunyoujun.github.io/issues?q=is:issue+PHP连接MySQL服务器" target="_blank" rel="noopener">GitHub Issues</a></div></div></div></main><footer class="sidebar-translate" id="footer"><div class="copyright"><span>&copy; 2019 – 2020 </span><span class="with-love" id="animate"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-cloud-line"></use></svg></span><span class="author"> ghatgy</span></div><div class="powered"><span>Powered by <a href="https://hexo.io" target="_blank" rel="noopener">Hexo</a> v4.2.0</span><span class="footer-separator">|</span><span>Theme - <a rel="noopener" href="https://github.com/YunYouJun/hexo-theme-yun" target="_blank"><span>Yun</span></a> v0.4.0</span></div><div class="live_time"><span>本博客已萌萌哒地运行</span><span id="display_live_time"></span><span class="moe-text">(●'◡'●)</span><script>function blog_live_time() {
   window.setTimeout(blog_live_time, 1000);

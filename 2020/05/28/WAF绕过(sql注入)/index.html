@@ -15,7 +15,7 @@
 <li>Bypass他就是绕过的意思呀，我们渗透测试人员通过特殊语句的构建进行渗透测试，然后达到绕过WAF的手法</li>
 </ul>
 <h1 id="二、WAF检测机制"><a href="#二、WAF检测机制" class="headerlink" title="二、WAF检测机制"></a>二、WAF检测机制</h1><p><strong>WAF检测机制其实很简单，==核心就是正则匹配==，(就是你们学过的正则匹配)，虽然说还有字符串强行匹配，还有什么语义解析，但是实际上还是正则居多。</strong></p>
-<h3 id="一个CMS的自带防护机制"><a href="#一个CMS的自带防护机制" class="headerlink" title="一个CMS的自带防护机制:"></a>一个CMS的自带防护机制:</h3><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200324201803.png" alt=""></p>
+<h3 id="一个CMS的自带防护机制"><a href="#一个CMS的自带防护机制" class="headerlink" title="一个CMS的自带防护机制:"></a>一个CMS的自带防护机制:</h3><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200324201803.png" alt="" loading="lazy"></p>
 <h1 id="三、常见绕WAF手法"><a href="#三、常见绕WAF手法" class="headerlink" title="三、常见绕WAF手法"></a>三、常见绕WAF手法</h1><p>​     <strong>安全和客户体验都是需要平衡的，特别是对于WAF而言，你想想，用了WAF之后，然后网页动不动就拦截，比如我是用户，然后因为我用户名叫and然后我就被拉黑了，因为我不小心输了个’页面就出问题，这个当然不可以，所以WAF一般都是通用的，并不是单独定制的，既然是通用的，那么他在拦截上会比较谨慎，所以WAF的正则一般是搭配式的。</strong></p>
 <p><strong>知道WAF通过正则匹配,替换函数试试</strong></p>
 <ul>

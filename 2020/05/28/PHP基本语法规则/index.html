@@ -16,7 +16,7 @@
 <p>​    后面，我们会写很多“纯php代码文件”（里面没有任何html代码）。</p>
 <p>​    </p>
 <h2 id="PHP-语句结束符"><a href="#PHP-语句结束符" class="headerlink" title="PHP 语句结束符"></a>PHP 语句结束符</h2><p>使用英文分号（;）表示一条语句的结束。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200526202055.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200526202055.png" alt="" loading="lazy"></p>
 <h2 id="PHP注释"><a href="#PHP注释" class="headerlink" title="PHP注释"></a>PHP注释</h2><p><strong>单行注释：</strong><br>    两个斜杠： //斜杠后面的部分就是注释内容，PHP语言不会去处理它（不执行）</p>
 <p><strong>多行注释：</strong><br>    形式：<br>    /*<br>    这是注释内容。。。<br>    可以写多行<br>    */</p>
 <p>​    /* 当然写一行也是可以的 */</p>
@@ -33,14 +33,14 @@
 <p>举例：</p>
 <p>​    $v1 = 123;                      ==//这里的等于号（=），不是数学上的等于（相等），而是“赋值”的意思==</p>
 <p>​                                            ==//其本质含义是：将123这个数据，放到v1这个变量中去。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200526203549.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200526203549.png" alt="" loading="lazy"></p>
 <p>变量的另一个角度理解：</p>
 <p>​        变量是一个“容器”，是一个“盒子”，是一个可以存放数据的位置——内存空间。</p>
 <p>也可以这样去理解：</p>
 <p>​        内存（条）中分割出很多很多的小格子，每个格子都有一个编号地址（所谓内存地址）。</p>
 <p>​        其中存储了数据的格子上有一定的标记名（变量名），并存放了对应的数据。</p>
 <p>​        图示如下：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527083138.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527083138.png" alt="" loading="lazy"></p>
 <p>对应代码如下：</p>
 <p>​        $a = 200;</p>
 <p>​        $b = 100;</p>
@@ -72,7 +72,7 @@
 <p>​        变量初始赋值后，可以后续再去重新赋值——这就是修改了变量的值，比如：</p>
 <p>​        $name = “张三不疯”;</p>
 <p>​        变量赋值的本质是：将变量名，跟一个数据“建立关联（联系）”，图示如下：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527083717.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527083717.png" alt="" loading="lazy"></p>
 <p><strong>取值——常见操作</strong></p>
 <p>​        取值，就是，从变量这个容器中拿到其中存储的数据（值）；</p>
 <p>​        取值无处不在：凡是使用到变量，并在该位置上，需要一个“数据”的时候，就会发生取值操作</p>
@@ -87,9 +87,9 @@
 <p>​        当一个变量中存储了数据，我们也可以去销毁（删除）它，语法如下：</p>
 <p>​            ==unset( $变量名 ）==。</p>
 <p>​            ==删除变量的本质是：断开变量名跟其关联过的那个数据之间的“联系”==，图示如下：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527085016.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527085016.png" alt="" loading="lazy"></p>
 <p>​        此时，该变量就不再指向某个数据了，其isset()判断的结果为false。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527085142.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527085142.png" alt="" loading="lazy"></p>
 <h2 id="变量传值（难点）"><a href="#变量传值（难点）" class="headerlink" title="==变量传值（难点）=="></a>==变量传值（难点）==</h2><p><strong>含义：</strong></p>
 <p>​        是指，将一个变量的值“传递”给另一个变量的方式问题。</p>
 <p>​        形式上，就是一个变量在等号左边，一个变量在等号右边，就表示将右边变量的值传给左边的变量。</p>
@@ -104,15 +104,15 @@
 <p>​        可见：</p>
 <p>​            ==值传递之后，两个变量互不影响，相互独立，没有关系了==！</p>
 <p>​        其原理如下所示：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527090938.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527090938.png" alt="" loading="lazy"></p>
 <p>​        可见，此时两个变量在赋值之后，就相互独立，各自有自己的存放空间。改变一个，另一个不受影响。</p>
 <p>​        代码演示：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091011.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091011.png" alt="" loading="lazy"></p>
 <p><strong>==引用传递：==</strong></p>
 <p>​        是将右边变量对数据的引用关系，传给左边的变量。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527090938.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527090938.png" alt="" loading="lazy"></p>
 <p>​        代码演示：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091011.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091011.png" alt="" loading="lazy"></p>
 <h2 id="预定义变量"><a href="#预定义变量" class="headerlink" title="==预定义变量=="></a>==预定义变量==</h2><p>​        在PHP语言内部，有一些（也就10来个）变量，是现成的，直接可以使用，这就是所谓预定义变量。</p>
 <p>我们要做的是事情就是：理解该变量是什么意思，以及怎么用</p>
 <h3 id="GET变量"><a href="#GET变量" class="headerlink" title="$_GET变量"></a>$_GET变量</h3><p>​        代表浏览器表单通过“get”方式提交的所有数据（集），可以称为“get数据”。</p>
@@ -122,7 +122,7 @@
 <p>​        代码演示：</p>
 <p>​        制作一个表单，有两个输入框，可以输出数字，并提交。</p>
 <p>​        到另一个页面（文件）中，计算这两个数字的和！</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091422.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091422.png" alt="" loading="lazy"></p>
 <h3 id="POST"><a href="#POST" class="headerlink" title="$_POST"></a>$_POST</h3><p>​        代表浏览器表单通过“post”方式提交的所有数据（集），可以称为“POST数据”。</p>
 <p>​        也可以理解为：</p>
 <p>​            $_POST变量里面会“自动存储”（保存/装载）提交到某个文件中的POST数据。</p>
@@ -130,15 +130,15 @@
 <p>​    </p>
 <p>​        代码演示：</p>
 <p>​            有个表单，两个输入框，可以填写数字，有一个“提交按钮”，点击提交，可以计算他们的和并输出。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091526.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091526.png" alt="" loading="lazy"></p>
 <p>​        扩展（提交给自己！）：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091559.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091559.png" alt="" loading="lazy"></p>
 <h3 id="REQUEST"><a href="#REQUEST" class="headerlink" title="$_REQUEST"></a>$_REQUEST</h3><p>​        代表浏览器通过“get”方式 或 “post”方式提交的数据的合集。</p>
 <p>​        即：它既能接收到get过来的数据，也能接收到post过来的数据！</p>
 <p>​        通常，一个表单，只提交一种形式的数据，要么get数据，要么post数据！</p>
 <p>​        代码演示：</p>
 <p>​        但，有一个情况，提交post数据的同时，也可以提交get数据：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091644.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091644.png" alt="" loading="lazy"></p>
 <h3 id="SERVER变量"><a href="#SERVER变量" class="headerlink" title="$_SERVER变量"></a>$_SERVER变量</h3><p>​        它代表任何一次请求中，==客户端或服务器端的一些“基本信息”或系统信息==，包括很多（10多项）。</p>
 <p>我们无非就是要知道，哪些信息是可以供我们使用的！</p>
 <p>​        常用的有：</p>
@@ -148,7 +148,7 @@
 <p>​            DOCUMENT_ROOT： 表示当前请求的网站物理路径（apache设置站点时那个）</p>
 <p>​            REMOTE_ADDR：  表示当前请求的客户端的IP地址</p>
 <p>​            SCRIPT_NAME：     表示当前网页地址\</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091845.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527091845.png" alt="" loading="lazy"></p>
 <h2 id="可变变量"><a href="#可变变量" class="headerlink" title="可变变量"></a>可变变量</h2><p><strong>含义：</strong></p>
 <p>​        变量名本身又是一个“变量”的变量。</p>
 <p>示例：</p>
@@ -158,7 +158,7 @@
 <p>​        echo $$str;  //输出10。这里，“$$str”就是所谓的“可变变量”</p>
 <p>​                        //相当于 echo $v1;   结果就是10</p>
 <p>代码演示：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527092047.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527092047.png" alt="" loading="lazy"></p>
 <h1 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h1><p><strong>常量的含义</strong></p>
 <p>​        常量，就是一个用于存储“不会（也不允许）变化的数据”的标识符。</p>
 <p>​        比如圆周率，在一定的应用场景中，就是是一个固定的值（人为规定为某个值）。</p>
@@ -171,18 +171,18 @@
 <p>​        echo 常量名；      //注意：使用常量，前面不带”$”符号，也不能有引号</p>
 <p><strong>使用constant()函数以取值：</strong></p>
 <p>​        echo constant(‘常量名’);      //注意，此时常量名要用引号引起来。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527094710.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527094710.png" alt="" loading="lazy"></p>
 <h2 id="变量与常量的区别："><a href="#变量与常量的区别：" class="headerlink" title="变量与常量的区别："></a>变量与常量的区别：</h2><p>​        1. 变量的数据可以变化（重新赋值），常量不可以。</p>
 <p>​        2. ==变量可以存储各种数据类型，而常量只能存储简单数据类型。==</p>
 <p>​        3. 给变量赋值可以是“计算”结果，但给常量赋值，只能是“直接写出的值”（字面值）</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527094840.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527094840.png" alt="" loading="lazy"></p>
 <h2 id="判断一个常量是否存在：defined"><a href="#判断一个常量是否存在：defined" class="headerlink" title="判断一个常量是否存在：defined();"></a>判断一个常量是否存在：defined();</h2><p>​        判断的结果返回：true（表示存在）或false（表示不存在）</p>
 <p>形式：</p>
 <p>​        if（ defined (‘常量名’) ) {     //如果该常量名存在，则….</p>
 <p>​                //….做什么事情。。。。</p>
 <p>​            }</p>
 <p>演示：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527094955.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527094955.png" alt="" loading="lazy"></p>
 <h2 id="预定义常量"><a href="#预定义常量" class="headerlink" title="预定义常量"></a>预定义常量</h2><p>​        预定义常量就是PHP语言内部预先定义好的常量，我们可以直接使用。</p>
 <p>​        比如：PHP_VERSION, PHP_OS, PHP_INT_MAX, M_PI等。</p>
 <p>​        PHP_VERSION： 表示当前php的版本信息</p>
@@ -190,14 +190,14 @@
 <p>​        PHP_INT_MAX： 表示当前版本的php中的最大的整数值</p>
 <p>​        M_PI：         表示圆周率π（一个有10多位小数的数）</p>
 <p>查手册，预定义常量如下：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527095138.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527095138.png" alt="" loading="lazy"></p>
 <h2 id="几个魔术常量"><a href="#几个魔术常量" class="headerlink" title="几个魔术常量"></a>几个魔术常量</h2><p><strong>含义：</strong></p>
 <p>​        魔术常量也是常量，只是在形式上为常量，而其值其实是“变化”的。</p>
 <p>他们也是系统中预先定义好的，也就几个，下面是最常用的 3个：</p>
 <p><strong>_<em>DIR_</em></strong>         ：代表当前php网页文件所在的目录</p>
 <p>*<em>_<em>FILE_</em> *</em>      ：代表当前php网页文件本身的路径</p>
 <p><strong>_<em>LINE_</em></strong>,     ：代表当前这个常量所在的行号</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527095443.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527095443.png" alt="" loading="lazy"></p>
 <h1 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h1><h2 id="数据类型分类与概述"><a href="#数据类型分类与概述" class="headerlink" title="数据类型分类与概述"></a>数据类型分类与概述</h2><p><strong>==标量类型==</strong></p>
 <p>​        标量类型也可以理解为“基本类型”，“简单类型”。</p>
 <p>​        标量类型包括如下4种：</p>
@@ -414,7 +414,7 @@
 <p>​        $v1 = 10;     //此时，$v1中数据是整数类型</p>
 <p>​        settype( $v1, ‘string’); //此时，$v1是字符串类型，即其中的数据变成了：“10”</p>
 <p>var_dump()： 输出变量的“完整信息”，包括变量类型，长度（如果需要），内容</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527145758.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527145758.png" alt="" loading="lazy"></p>
 <p>==判断是否为某种类型（类型系列函数）==： </p>
 <p>​        is_int() / is_integer()：判断是否为整数类型</p>
 <p>​        is_float()：判断是否为浮点类型</p>
@@ -730,7 +730,7 @@
 <p>​            }</p>
 <p><strong>说明：</strong></p>
 <p>​        1. 执行流程如下图所示</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527154450.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527154450.png" alt="" loading="lazy"></p>
 <p>​        2. 此语句结构是将循环的3个要素都集中在一起写的形式，比较紧凑，容易控制，最常用。</p>
 <p>​        3. 循环变量初始化语句1只执行一次，所以真正的正常循环，是在“2-&gt;4-&gt;3”之间进行</p>
 <h2 id="多重循环及案例"><a href="#多重循环及案例" class="headerlink" title="多重循环及案例"></a>多重循环及案例</h2><p><strong>概念：</strong></p>
@@ -783,7 +783,7 @@
 <p>实际上，通常函数外面的那些程序，都是运行在主空间中。</p>
 <p>那么，函数的运行，就相对独立了——==每个函数的每次调用，都是运行在单独的一个自己的空间中==。</p>
 <p>如下所示：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527155526.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527155526.png" alt="" loading="lazy"></p>
 <h2 id="函数参数"><a href="#函数参数" class="headerlink" title="==函数参数=="></a>==函数参数==</h2><p><strong>形参（形式参数）</strong></p>
 <p>​        就是定义函数的时候，在函数名后的小括号中给出的变量名。</p>
 <p>​        形参，只能在函数内部使用——即该变量的使用范围仅仅局限于当前函数内部。</p>
@@ -934,7 +934,7 @@
 <p>​        实际上，只有有限的10来个系统预定义变量是超全局变量，包括：$_GET, $_POST, $_REQUEST等。</p>
 <p>​        所以，系统预定义变量，也被统称为超全局变量。</p>
 <p>PHP中的不同作用域的图示：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527164611.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527164611.png" alt="" loading="lazy"></p>
 <p><strong>一个特别的超全局变量：$GLOBALS</strong></p>
 <p>​        它也是一个数组，==其中存储了我们自己定义的所有全局变量。==</p>
 <p>​        每个全局变量的变量名，就是$GLOBALS数组的一个单元。</p>
@@ -964,7 +964,7 @@
 <p><strong>==危险：==</strong></p>
 <p>​        ==如果函数在执行的过程中没有一个“不再调用”的终结机制，那么就会出现“停不下来”的现象。==</p>
 <p>原理：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527165100.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527165100.png" alt="" loading="lazy"></p>
 <p><strong>递归调用过程的代码演示：</strong></p>
 <p>分析一下代码的输出结果：</p>
 <p>​        function f1($n){</p>
@@ -1050,7 +1050,7 @@
 <li><p>可以在php.ini中使用（设置）他们，如下所示：</p>
 </li>
 </ol>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527170446.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527170446.png" alt="" loading="lazy"></p>
 <h2 id="错误触发"><a href="#错误触发" class="headerlink" title="错误触发"></a>错误触发</h2><p>就是发生了一个错误的意思——即触发了错误。</p>
 <p>有两种情形会触发错误：</p>
 <p>​        1. 程序本身有错，则运行时就会触发错误（并提示）。</p>
@@ -1125,7 +1125,7 @@
 <p>特点：无特点，是最“纯净”的字符串，写什么就是什么。</p>
 <p>heredoc字符串，和nowdoc字符串，适用于表达（描述）一大段内容的字符串，特别是适合于写html部分的代码（含js，css等）。</p>
 <p>如下：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527172348.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527172348.png" alt="" loading="lazy"></p>
 <h2 id="转义字符"><a href="#转义字符" class="headerlink" title="转义字符"></a>转义字符</h2><p>转义的字符的本质，其实是在一个字符串的语法形式中，如何来表达一些相对特殊的一些字符的问题。</p>
 <p>比如：</p>
 <p>​        双引号字符串：$s = “这里字符串内容，要是直接出现双引号就会有语法问题。”</p>
@@ -1144,10 +1144,10 @@
 <p>​            求该字符串的“字节数”，也就是占据的字节空间大小；</p>
 <p>​        mb_strlen(字符串)：</p>
 <p>​            求该字符串的“字符个数”。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527172832.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527172832.png" alt="" loading="lazy"></p>
 <p>该模块准确的位置如下：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527172857.png" alt=""></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527172913.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527172857.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527172913.png" alt="" loading="lazy"></p>
 <h2 id="常用字符串函数（重点"><a href="#常用字符串函数（重点" class="headerlink" title="常用字符串函数（重点)"></a>常用字符串函数（重点)</h2><p>字符串输出：</p>
 <p>​        echo： 输出一个或多个字符（不是函数，是语言结构）</p>
 <p>​        print：输出一个字符串</p>
@@ -1311,7 +1311,7 @@
 <h2 id="数组排序算法（重点-难点）"><a href="#数组排序算法（重点-难点）" class="headerlink" title="==数组排序算法（重点/难点）=="></a>==数组排序算法（重点/难点）==</h2><p><strong>数组的排序问题</strong></p>
 <p>常用的排序函数：sort, rsort, asort, arsort</p>
 <p>数组排序函数大全：</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527184939.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527184939.png" alt="" loading="lazy"></p>
 <p><strong>冒泡排序算法</strong></p>
 <p>原理：</p>
 <p>​        遍历一个数组，在此过程中，将相邻的两个单元的值进行比较：如果前面的比后面的大，则将两个值交换位置。这个过程到最后，数组中的最大值一定放在最后位置了。</p>
@@ -1443,7 +1443,7 @@
 <td></td>
 </tr>
 </tbody></table>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527185140.png" alt=""></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200527185140.png" alt="" loading="lazy"></p>
 <h2 id="数组查找算法"><a href="#数组查找算法" class="headerlink" title="数组查找算法"></a>数组查找算法</h2><p>查找算法，就是从一个数组中，找一个“目标”（可以是值，也可以是键）的算法。</p>
 <p>数组的查找函数：</p>
 <p>​        in_array()         ：在一个数组中找是否存在某个数据。</p>
