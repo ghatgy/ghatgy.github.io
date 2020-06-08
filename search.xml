@@ -1,9 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>COOKIE</title>
+    <url>/2020/05/28/COOKIE/</url>
+    <content><![CDATA[<h1 id="COOKIE概述"><a href="#COOKIE概述" class="headerlink" title="COOKIE概述"></a>COOKIE概述</h1><h2 id="什么是COOKIE？"><a href="#什么是COOKIE？" class="headerlink" title="什么是COOKIE？"></a>什么是COOKIE？</h2><p>​        简单来说，==Cookies就是服务器暂时存放在你的电脑里的资料==（.txt格式的文本文件），好让服务器用来辨认你的计算机（==通常经过加密==）；</p>
+<p>​        ==Cookie是由服务器端生成，发送给User-Agent（一般是浏览器）==，浏览器会将Cookie的key/value保存到某个目录下的文本文件内，<strong>==下次请求同一网站时就发送该Cookie给服务器==</strong>。</p>
+<p>​         Cookie名称和值可以由服务器端开发者定义，这样服务器可以知道该用户是否是合法用户以及是否需要重新登录等，服务器可以设置或读取Cookies中包含信息，借此维护用户跟服务器会话中的状态。</p>
+<p><strong>==注意：每种浏览器都可以存储COOKIE数据；各个浏览器之间的COOKIE数据不能共享。==</strong></p>
+<h2 id="IE浏览器查看COOKIE数据"><a href="#IE浏览器查看COOKIE数据" class="headerlink" title="IE浏览器查看COOKIE数据"></a>IE浏览器查看COOKIE数据</h2><p>访问路径：==工具栏菜单 &gt;&gt; internet选项 &gt;&gt; 常规选项卡 &gt;&gt; 浏览器历史记录 &gt;&gt; 设置 &gt;&gt; 查看文件==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170335.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170347.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170357.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170414.png" alt="" loading="lazy"></p>
+<h2 id="使用COOKIE的好处"><a href="#使用COOKIE的好处" class="headerlink" title="使用COOKIE的好处"></a>使用COOKIE的好处</h2><p>​        ==用户登录时，记住登录账号和密码，为下一次登录时简化操作；==</p>
+<p>​        另一个重要应用场合是“购物车”之类处理。==用户可能会在一段时间内在同一家网站的不同页面中选择不同的商品，这些信息都会写入Cookies，以便在最后付款时提取信息。==</p>
+<p>​        ==跟踪统计用户访问网站的习惯。==什么时间访问，访问了哪些页面，页面停留时间等，为用户提供个性化服务，为网站营销提供参考。</p>
+<h2 id="COOKIE的工作原理"><a href="#COOKIE的工作原理" class="headerlink" title="COOKIE的工作原理"></a>COOKIE的工作原理</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170529.png" alt="" loading="lazy"></p>
+<p>==<strong>第1次请求和第1次响应</strong>==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170557.png" alt="" loading="lazy"></p>
+<p>==<strong>第2次请求和第2次响应</strong>==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170644.png" alt="" loading="lazy"></p>
+<h1 id="COOKIE操作"><a href="#COOKIE操作" class="headerlink" title="COOKIE操作"></a>COOKIE操作</h1><h2 id="添加COOKIE数据"><a href="#添加COOKIE数据" class="headerlink" title="添加COOKIE数据"></a>添加COOKIE数据</h2><p>描述：向客户端发送一个 HTTP cookie。 </p>
+<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path [, string $domain [, bool $secure = false [, bool $httponly = false ]]]]]] )</code></strong></p>
+<p> 参数：</p>
+<ul>
+<li><p>$name，cookie的名称；</p>
+</li>
+<li><p>$value，cookie的值，会自动进行 URL 编码。接收时会进行 URL 解码。==<strong>COOKIE值的类型只能是标量数据类型，不可是数组、对象、资源</strong>。==</p>
+</li>
+<li><p>$expire，cookie的有效期；</p>
+</li>
+<li><p>$path，cookie的服务器路径；</p>
+</li>
+<li><p>$domain，cookie的域名；</p>
+</li>
+<li><p>$secure，规定是否通过安全的 HTTPS 连接来传输 cookie。 </p>
+</li>
+</ul>
+<p>返回：设置成功返回TRUE，失败返回FALSE。</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528171205.png" alt="" loading="lazy"></p>
+<h2 id="读取COOKIE数据"><a href="#读取COOKIE数据" class="headerlink" title="读取COOKIE数据"></a>读取COOKIE数据</h2><p>描述：获取cookie数据是通过超全局数组<strong>$_COOKIE</strong>来实现的。</p>
+<p>语法：<strong><code>value = $_COOKIE[key]</code></strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528171256.png" alt="" loading="lazy"></p>
+<h1 id="COOKIE设置"><a href="#COOKIE设置" class="headerlink" title="COOKIE设置"></a>COOKIE设置</h1><h2 id="COOKIE过期有效性设置"><a href="#COOKIE过期有效性设置" class="headerlink" title="COOKIE过期有效性设置"></a>COOKIE过期有效性设置</h2><p><strong>1）即时性COOKIE设置</strong></p>
+<p>描述：==默认cookie的有效期是关闭浏览器时，自动失效。==该cookie称为临时cookie；</p>
+<p>语法：<strong><code>bool setcookie ( string $name , string $value [, int $expire = 0 ])</code></strong></p>
+<p>参数：$expire可选，指定cookie保存的时间，默认为0，关闭浏览器失效；</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172158.png" alt="" loading="lazy"></p>
+<p><strong>2）有效性COOKIE设置</strong></p>
+<p>语法： <strong><code>bool setcookie ( string $name , string $value [, int $expire = 0 ])</code></strong></p>
+<p>参数：$expire可选，指定cookie保存的时间，默认为0，关闭浏览器失效；</p>
+<p>说明：$expire为一个时间戳。一般用==<strong>time()+N</strong>==表示新的时间戳。在当前时间点，再加上N秒后，产生一个新的时间戳。</p>
+<p>==提示：一旦指定了有效的过期时间，cookie失效跟关闭浏览器无关(持久cookie)。==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172313.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172326.png" alt="" loading="lazy"></p>
+<h2 id="COOKIE路径有效性"><a href="#COOKIE路径有效性" class="headerlink" title="COOKIE路径有效性"></a>COOKIE路径有效性</h2><p>描述：设置COOKIE只能在指定的目录及其子目录下有效</p>
+<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path]]] )</code></strong></p>
+<p>参数：==<strong>$path默认为”/“</strong>==，==代表当前网站根目录==，在当前目录及其所有子目录都可以使用。</p>
+<p>说明：由于浏览器每次请求时，携带到服务器端很多的COOKIE数据，会导致请求数据变得庞大；将COOKIE划分到各个路径中，减少每个路径下COOKIE的数量。</p>
+<p>==例如：京东保存在客户端的有1万个COOKIE数据，大小为100MB，每次请求都需要1个小时。这样一来，每次请求带1个万COOKIE，但是当前页码只使用2个COOKIE，造成带宽浪费。<br>解决方案是：请求页面需要什么COOKIE，就带什么COOKIE过去，有针对性，会节省宽带==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172540.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172549.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172606.png" alt="" loading="lazy"></p>
+<h2 id="COOKIE域名有效性"><a href="#COOKIE域名有效性" class="headerlink" title="COOKIE域名有效性"></a>COOKIE域名有效性</h2><p> 描述：给一个COOKIE指定访问的域名</p>
+<p> 语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path [, string $domain]]]] )</code></strong></p>
+<p> 提示：==默认情况下，cookie只能在当前域名下有效。==</p>
+<p> 域名划分：</p>
+<ul>
+<li><p>主域名：itcast.cn</p>
+</li>
+<li><p>一级域名：<a href="http://www.itcast.cn" target="_blank" rel="noopener">www.itcast.cn</a></p>
+</li>
+<li><p>二级域名：news.itcast.cn</p>
+</li>
+<li><p>三级域名：php.news.itcast.cn</p>
+</li>
+</ul>
+<p>说明：如果COOKIE域名有效性，设置为主域名，则在所有域名下都可以使用。如果设置为子域名，则只能在子域名下使用该COOKIE。</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172747.png" alt="" loading="lazy"></p>
+<p><strong>==第一步：修改hosts文件添加二级域名==</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173025.png" alt="" loading="lazy"></p>
+<p><strong>==第二步：将两个域名都指向同一个虚拟目录==</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173052.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173104.png" alt="" loading="lazy"></p>
+<p>==<strong>第三步：测试结果</strong>==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173128.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173140.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173200.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173212.png" alt="" loading="lazy"></p>
+<h2 id="是否仅https安全连接才能发送cookie呢？"><a href="#是否仅https安全连接才能发送cookie呢？" class="headerlink" title="是否仅https安全连接才能发送cookie呢？"></a>是否仅https安全连接才能发送cookie呢？</h2><p>描述：==是否仅限https来发送COOKIE数据，默认情况下，为http协议发送；==</p>
+<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path [, string $domain [, bool $secure = false]]]]] )</code></strong></p>
+<p>https：是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL 。</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173314.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173348.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173403.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173413.png" alt="" loading="lazy"></p>
+<h2 id="是否只能通过http协议来使用COOKIE呢？"><a href="#是否只能通过http协议来使用COOKIE呢？" class="headerlink" title="是否只能通过http协议来使用COOKIE呢？"></a>是否只能通过http协议来使用COOKIE呢？</h2><p> 描述：客户端的COOKIE除了可以通过HTTP协议来使用外，还可以使用JS来使用COOKIE。</p>
+<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path [, string $domain [, bool $secure = false [, bool $httponly = false ]]]]]] )</code></strong></p>
+<p>==<strong>提示：除了COOKIE通过http发往服务器使用，JS也可以使用该COOKIE。</strong>==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173509.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173518.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173529.png" alt="" loading="lazy"></p>
+<h1 id="删除COOKIE数据"><a href="#删除COOKIE数据" class="headerlink" title="删除COOKIE数据"></a>删除COOKIE数据</h1><h2 id="设置COOKIE有效性为过去的某一个时间"><a href="#设置COOKIE有效性为过去的某一个时间" class="headerlink" title="设置COOKIE有效性为过去的某一个时间"></a>设置COOKIE有效性为过去的某一个时间</h2><p>描述：设置有效期为过去的某一个时间</p>
+<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 ]] )</code></strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173627.png" alt="" loading="lazy"></p>
+<h2 id="设置COOKIE的值为false或空字符串"><a href="#设置COOKIE的值为false或空字符串" class="headerlink" title="设置COOKIE的值为false或空字符串"></a>设置COOKIE的值为false或空字符串</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173645.png" alt="" loading="lazy"></p>
+<h2 id="清理浏览器缓存"><a href="#清理浏览器缓存" class="headerlink" title="清理浏览器缓存"></a>清理浏览器缓存</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173707.png" alt="" loading="lazy"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>PHP操作目录</title>
     <url>/2020/05/28/PHP%E6%93%8D%E4%BD%9C%E7%9B%AE%E5%BD%95/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="PHP操作目录"><a href="#PHP操作目录" class="headerlink" title="PHP操作目录"></a>PHP操作目录</h1><h2 id="创建新目录mkdir"><a href="#创建新目录mkdir" class="headerlink" title="创建新目录mkdir()"></a>创建新目录mkdir()</h2><p>描述：尝试新建一个由 pathname 指定的目录。</p>
+    <content><![CDATA[<h1 id="PHP操作目录"><a href="#PHP操作目录" class="headerlink" title="PHP操作目录"></a>PHP操作目录</h1><h2 id="创建新目录mkdir"><a href="#创建新目录mkdir" class="headerlink" title="创建新目录mkdir()"></a>创建新目录mkdir()</h2><p>描述：尝试新建一个由 pathname 指定的目录。</p>
 <p>语法：<code>bool mkdir ( string $pathname [, int $mode = 0777 [, bool $recursive = false ]] )</code></p>
 <p>参数：</p>
 <ul>
@@ -181,117 +289,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>COOKIE</title>
-    <url>/2020/05/28/COOKIE/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="COOKIE概述"><a href="#COOKIE概述" class="headerlink" title="COOKIE概述"></a>COOKIE概述</h1><h2 id="什么是COOKIE？"><a href="#什么是COOKIE？" class="headerlink" title="什么是COOKIE？"></a>什么是COOKIE？</h2><p>​        简单来说，==Cookies就是服务器暂时存放在你的电脑里的资料==（.txt格式的文本文件），好让服务器用来辨认你的计算机（==通常经过加密==）；</p>
-<p>​        ==Cookie是由服务器端生成，发送给User-Agent（一般是浏览器）==，浏览器会将Cookie的key/value保存到某个目录下的文本文件内，<strong>==下次请求同一网站时就发送该Cookie给服务器==</strong>。</p>
-<p>​         Cookie名称和值可以由服务器端开发者定义，这样服务器可以知道该用户是否是合法用户以及是否需要重新登录等，服务器可以设置或读取Cookies中包含信息，借此维护用户跟服务器会话中的状态。</p>
-<p><strong>==注意：每种浏览器都可以存储COOKIE数据；各个浏览器之间的COOKIE数据不能共享。==</strong></p>
-<h2 id="IE浏览器查看COOKIE数据"><a href="#IE浏览器查看COOKIE数据" class="headerlink" title="IE浏览器查看COOKIE数据"></a>IE浏览器查看COOKIE数据</h2><p>访问路径：==工具栏菜单 &gt;&gt; internet选项 &gt;&gt; 常规选项卡 &gt;&gt; 浏览器历史记录 &gt;&gt; 设置 &gt;&gt; 查看文件==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170335.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170347.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170357.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170414.png" alt="" loading="lazy"></p>
-<h2 id="使用COOKIE的好处"><a href="#使用COOKIE的好处" class="headerlink" title="使用COOKIE的好处"></a>使用COOKIE的好处</h2><p>​        ==用户登录时，记住登录账号和密码，为下一次登录时简化操作；==</p>
-<p>​        另一个重要应用场合是“购物车”之类处理。==用户可能会在一段时间内在同一家网站的不同页面中选择不同的商品，这些信息都会写入Cookies，以便在最后付款时提取信息。==</p>
-<p>​        ==跟踪统计用户访问网站的习惯。==什么时间访问，访问了哪些页面，页面停留时间等，为用户提供个性化服务，为网站营销提供参考。</p>
-<h2 id="COOKIE的工作原理"><a href="#COOKIE的工作原理" class="headerlink" title="COOKIE的工作原理"></a>COOKIE的工作原理</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170529.png" alt="" loading="lazy"></p>
-<p>==<strong>第1次请求和第1次响应</strong>==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170557.png" alt="" loading="lazy"></p>
-<p>==<strong>第2次请求和第2次响应</strong>==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528170644.png" alt="" loading="lazy"></p>
-<h1 id="COOKIE操作"><a href="#COOKIE操作" class="headerlink" title="COOKIE操作"></a>COOKIE操作</h1><h2 id="添加COOKIE数据"><a href="#添加COOKIE数据" class="headerlink" title="添加COOKIE数据"></a>添加COOKIE数据</h2><p>描述：向客户端发送一个 HTTP cookie。 </p>
-<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path [, string $domain [, bool $secure = false [, bool $httponly = false ]]]]]] )</code></strong></p>
-<p> 参数：</p>
-<ul>
-<li><p>$name，cookie的名称；</p>
-</li>
-<li><p>$value，cookie的值，会自动进行 URL 编码。接收时会进行 URL 解码。==<strong>COOKIE值的类型只能是标量数据类型，不可是数组、对象、资源</strong>。==</p>
-</li>
-<li><p>$expire，cookie的有效期；</p>
-</li>
-<li><p>$path，cookie的服务器路径；</p>
-</li>
-<li><p>$domain，cookie的域名；</p>
-</li>
-<li><p>$secure，规定是否通过安全的 HTTPS 连接来传输 cookie。 </p>
-</li>
-</ul>
-<p>返回：设置成功返回TRUE，失败返回FALSE。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528171205.png" alt="" loading="lazy"></p>
-<h2 id="读取COOKIE数据"><a href="#读取COOKIE数据" class="headerlink" title="读取COOKIE数据"></a>读取COOKIE数据</h2><p>描述：获取cookie数据是通过超全局数组<strong>$_COOKIE</strong>来实现的。</p>
-<p>语法：<strong><code>value = $_COOKIE[key]</code></strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528171256.png" alt="" loading="lazy"></p>
-<h1 id="COOKIE设置"><a href="#COOKIE设置" class="headerlink" title="COOKIE设置"></a>COOKIE设置</h1><h2 id="COOKIE过期有效性设置"><a href="#COOKIE过期有效性设置" class="headerlink" title="COOKIE过期有效性设置"></a>COOKIE过期有效性设置</h2><p><strong>1）即时性COOKIE设置</strong></p>
-<p>描述：==默认cookie的有效期是关闭浏览器时，自动失效。==该cookie称为临时cookie；</p>
-<p>语法：<strong><code>bool setcookie ( string $name , string $value [, int $expire = 0 ])</code></strong></p>
-<p>参数：$expire可选，指定cookie保存的时间，默认为0，关闭浏览器失效；</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172158.png" alt="" loading="lazy"></p>
-<p><strong>2）有效性COOKIE设置</strong></p>
-<p>语法： <strong><code>bool setcookie ( string $name , string $value [, int $expire = 0 ])</code></strong></p>
-<p>参数：$expire可选，指定cookie保存的时间，默认为0，关闭浏览器失效；</p>
-<p>说明：$expire为一个时间戳。一般用==<strong>time()+N</strong>==表示新的时间戳。在当前时间点，再加上N秒后，产生一个新的时间戳。</p>
-<p>==提示：一旦指定了有效的过期时间，cookie失效跟关闭浏览器无关(持久cookie)。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172313.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172326.png" alt="" loading="lazy"></p>
-<h2 id="COOKIE路径有效性"><a href="#COOKIE路径有效性" class="headerlink" title="COOKIE路径有效性"></a>COOKIE路径有效性</h2><p>描述：设置COOKIE只能在指定的目录及其子目录下有效</p>
-<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path]]] )</code></strong></p>
-<p>参数：==<strong>$path默认为”/“</strong>==，==代表当前网站根目录==，在当前目录及其所有子目录都可以使用。</p>
-<p>说明：由于浏览器每次请求时，携带到服务器端很多的COOKIE数据，会导致请求数据变得庞大；将COOKIE划分到各个路径中，减少每个路径下COOKIE的数量。</p>
-<p>==例如：京东保存在客户端的有1万个COOKIE数据，大小为100MB，每次请求都需要1个小时。这样一来，每次请求带1个万COOKIE，但是当前页码只使用2个COOKIE，造成带宽浪费。<br>解决方案是：请求页面需要什么COOKIE，就带什么COOKIE过去，有针对性，会节省宽带==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172540.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172549.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172606.png" alt="" loading="lazy"></p>
-<h2 id="COOKIE域名有效性"><a href="#COOKIE域名有效性" class="headerlink" title="COOKIE域名有效性"></a>COOKIE域名有效性</h2><p> 描述：给一个COOKIE指定访问的域名</p>
-<p> 语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path [, string $domain]]]] )</code></strong></p>
-<p> 提示：==默认情况下，cookie只能在当前域名下有效。==</p>
-<p> 域名划分：</p>
-<ul>
-<li><p>主域名：itcast.cn</p>
-</li>
-<li><p>一级域名：<a href="http://www.itcast.cn" target="_blank" rel="noopener">www.itcast.cn</a></p>
-</li>
-<li><p>二级域名：news.itcast.cn</p>
-</li>
-<li><p>三级域名：php.news.itcast.cn</p>
-</li>
-</ul>
-<p>说明：如果COOKIE域名有效性，设置为主域名，则在所有域名下都可以使用。如果设置为子域名，则只能在子域名下使用该COOKIE。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528172747.png" alt="" loading="lazy"></p>
-<p><strong>==第一步：修改hosts文件添加二级域名==</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173025.png" alt="" loading="lazy"></p>
-<p><strong>==第二步：将两个域名都指向同一个虚拟目录==</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173052.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173104.png" alt="" loading="lazy"></p>
-<p>==<strong>第三步：测试结果</strong>==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173128.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173140.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173200.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173212.png" alt="" loading="lazy"></p>
-<h2 id="是否仅https安全连接才能发送cookie呢？"><a href="#是否仅https安全连接才能发送cookie呢？" class="headerlink" title="是否仅https安全连接才能发送cookie呢？"></a>是否仅https安全连接才能发送cookie呢？</h2><p>描述：==是否仅限https来发送COOKIE数据，默认情况下，为http协议发送；==</p>
-<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path [, string $domain [, bool $secure = false]]]]] )</code></strong></p>
-<p>https：是以安全为目标的HTTP通道，简单讲是HTTP的安全版。即HTTP下加入SSL层，HTTPS的安全基础是SSL，因此加密的详细内容就需要SSL 。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173314.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173348.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173403.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173413.png" alt="" loading="lazy"></p>
-<h2 id="是否只能通过http协议来使用COOKIE呢？"><a href="#是否只能通过http协议来使用COOKIE呢？" class="headerlink" title="是否只能通过http协议来使用COOKIE呢？"></a>是否只能通过http协议来使用COOKIE呢？</h2><p> 描述：客户端的COOKIE除了可以通过HTTP协议来使用外，还可以使用JS来使用COOKIE。</p>
-<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 [, string $path [, string $domain [, bool $secure = false [, bool $httponly = false ]]]]]] )</code></strong></p>
-<p>==<strong>提示：除了COOKIE通过http发往服务器使用，JS也可以使用该COOKIE。</strong>==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173509.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173518.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173529.png" alt="" loading="lazy"></p>
-<h1 id="删除COOKIE数据"><a href="#删除COOKIE数据" class="headerlink" title="删除COOKIE数据"></a>删除COOKIE数据</h1><h2 id="设置COOKIE有效性为过去的某一个时间"><a href="#设置COOKIE有效性为过去的某一个时间" class="headerlink" title="设置COOKIE有效性为过去的某一个时间"></a>设置COOKIE有效性为过去的某一个时间</h2><p>描述：设置有效期为过去的某一个时间</p>
-<p>语法：<strong><code>bool setcookie ( string $name [, string $value [, int $expire = 0 ]] )</code></strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173627.png" alt="" loading="lazy"></p>
-<h2 id="设置COOKIE的值为false或空字符串"><a href="#设置COOKIE的值为false或空字符串" class="headerlink" title="设置COOKIE的值为false或空字符串"></a>设置COOKIE的值为false或空字符串</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173645.png" alt="" loading="lazy"></p>
-<h2 id="清理浏览器缓存"><a href="#清理浏览器缓存" class="headerlink" title="清理浏览器缓存"></a>清理浏览器缓存</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528173707.png" alt="" loading="lazy"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>PHP连接MySQL服务器</title>
     <url>/2020/05/28/PHP%E8%BF%9E%E6%8E%A5MySQL%E6%9C%8D%E5%8A%A1%E5%99%A8/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="PHP连接MySQL服务器"><a href="#PHP连接MySQL服务器" class="headerlink" title="PHP连接MySQL服务器"></a>PHP连接MySQL服务器</h1><h2 id="mysqli-connect"><a href="#mysqli-connect" class="headerlink" title="mysqli_connect()"></a>mysqli_connect()</h2><p>描述：连接到 MySQL服务器</p>
+    <content><![CDATA[<h1 id="PHP连接MySQL服务器"><a href="#PHP连接MySQL服务器" class="headerlink" title="PHP连接MySQL服务器"></a>PHP连接MySQL服务器</h1><h2 id="mysqli-connect"><a href="#mysqli-connect" class="headerlink" title="mysqli_connect()"></a>mysqli_connect()</h2><p>描述：连接到 MySQL服务器</p>
 <p>语法：<code>mysqli mysqli_connect([host][,username][,password][,dbname][,port])</code></p>
 <p>参数：</p>
 <ul>
@@ -439,7 +439,7 @@
   <entry>
     <title>SESSION</title>
     <url>/2020/05/28/SESSION/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="SESSION概述"><a href="#SESSION概述" class="headerlink" title="SESSION概述"></a>SESSION概述</h1><h2 id="什么是SESSION？"><a href="#什么是SESSION？" class="headerlink" title="什么是SESSION？"></a>什么是SESSION？</h2><ul>
+    <content><![CDATA[<h1 id="SESSION概述"><a href="#SESSION概述" class="headerlink" title="SESSION概述"></a>SESSION概述</h1><h2 id="什么是SESSION？"><a href="#什么是SESSION？" class="headerlink" title="什么是SESSION？"></a>什么是SESSION？</h2><ul>
 <li><p>Session对象存储特定用户的会话数据；</p>
 </li>
 <li><p>Session将会话数据存储在服务器端；</p>
@@ -504,9 +504,29 @@
 ]]></content>
   </entry>
   <entry>
+    <title>SSRF-服务器端请求伪造</title>
+    <url>/2020/04/06/SSRF-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/</url>
+    <content><![CDATA[<h1 id="一、什么是SSRF？"><a href="#一、什么是SSRF？" class="headerlink" title="一、什么是SSRF？"></a>一、什么是SSRF？</h1><p>​        服务器端请求伪造（SSRF）是指攻击者能够从易受攻击的Web应用程序发送精心设计的请求的对其他网站进行攻击。==(利用一个可发起网络请求的服务当作跳板来攻击其他服务)==</p>
+<p>​        攻击者能够利用目标帮助攻击者访问其他想要攻击的目标</p>
+<p>​        A让B帮忙访问C</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200322150615.png" alt="" loading="lazy"></p>
+<h3 id="能用ssrf做什么（危害）："><a href="#能用ssrf做什么（危害）：" class="headerlink" title="能用ssrf做什么（危害）："></a>能用ssrf做什么（危害）：</h3><ul>
+<li>扫描内部网络</li>
+<li>向内部==任意主机==的==任意端口==发送精心构造的数据包</li>
+<li>dos（请求大文件，始终保持连接）</li>
+<li>暴力穷举</li>
+</ul>
+<h1 id="二、SSRF攻击"><a href="#二、SSRF攻击" class="headerlink" title="二、SSRF攻击"></a>二、SSRF攻击</h1><h3 id="如何挖掘SSRF漏洞"><a href="#如何挖掘SSRF漏洞" class="headerlink" title="如何挖掘SSRF漏洞"></a>如何挖掘SSRF漏洞</h3><p>​        能够对外发起网络请求的地方，就可能存在SSRF漏洞。(POST或GET)</p>
+<p>​        eg:<a href="http://example.com/index.php?page=about.php" target="_blank" rel="noopener">http://example.com/index.php?page=about.php</a></p>
+<p>​    从远程服务器请求资源。</p>
+<p>​        数据库内置功能。（MSSQL）OpenRowset函数操作远程数据库（操作内网的数据库）</p>
+<p><a href="https://www.cnblogs.com/yechanglv/p/6923147.html" target="_blank" rel="noopener">https://www.cnblogs.com/yechanglv/p/6923147.html</a></p>
+]]></content>
+  </entry>
+  <entry>
     <title>WAF绕过(sql注入)</title>
     <url>/2020/05/28/WAF%E7%BB%95%E8%BF%87(sql%E6%B3%A8%E5%85%A5)/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、什么是bypass"><a href="#一、什么是bypass" class="headerlink" title="一、什么是bypass?"></a>一、什么是bypass?</h1><h3 id="什么是WAF"><a href="#什么是WAF" class="headerlink" title="什么是WAF:"></a>什么是WAF:</h3><ul>
+    <content><![CDATA[<h1 id="一、什么是bypass"><a href="#一、什么是bypass" class="headerlink" title="一、什么是bypass?"></a>一、什么是bypass?</h1><h3 id="什么是WAF"><a href="#什么是WAF" class="headerlink" title="什么是WAF:"></a>什么是WAF:</h3><ul>
 <li><p>WAF是一个缩写，他的全名叫做Web应用防护系统(Web Application Firewall),是通过通过执行一系列针对HTTP/HTTPS的安全策略来专门为Web应用提供保护的一款产品。</p>
 </li>
 <li><p>在互联网快速发展的今天，网站安全问题屡见不鲜，于是乎WAF类产品开始走红。</p>
@@ -588,29 +608,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>SSRF-服务器端请求伪造</title>
-    <url>/2020/04/06/SSRF-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E8%AF%B7%E6%B1%82%E4%BC%AA%E9%80%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、什么是SSRF？"><a href="#一、什么是SSRF？" class="headerlink" title="一、什么是SSRF？"></a>一、什么是SSRF？</h1><p>​        服务器端请求伪造（SSRF）是指攻击者能够从易受攻击的Web应用程序发送精心设计的请求的对其他网站进行攻击。==(利用一个可发起网络请求的服务当作跳板来攻击其他服务)==</p>
-<p>​        攻击者能够利用目标帮助攻击者访问其他想要攻击的目标</p>
-<p>​        A让B帮忙访问C</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200322150615.png" alt="" loading="lazy"></p>
-<h3 id="能用ssrf做什么（危害）："><a href="#能用ssrf做什么（危害）：" class="headerlink" title="能用ssrf做什么（危害）："></a>能用ssrf做什么（危害）：</h3><ul>
-<li>扫描内部网络</li>
-<li>向内部==任意主机==的==任意端口==发送精心构造的数据包</li>
-<li>dos（请求大文件，始终保持连接）</li>
-<li>暴力穷举</li>
-</ul>
-<h1 id="二、SSRF攻击"><a href="#二、SSRF攻击" class="headerlink" title="二、SSRF攻击"></a>二、SSRF攻击</h1><h3 id="如何挖掘SSRF漏洞"><a href="#如何挖掘SSRF漏洞" class="headerlink" title="如何挖掘SSRF漏洞"></a>如何挖掘SSRF漏洞</h3><p>​        能够对外发起网络请求的地方，就可能存在SSRF漏洞。(POST或GET)</p>
-<p>​        eg:<a href="http://example.com/index.php?page=about.php" target="_blank" rel="noopener">http://example.com/index.php?page=about.php</a></p>
-<p>​    从远程服务器请求资源。</p>
-<p>​        数据库内置功能。（MSSQL）OpenRowset函数操作远程数据库（操作内网的数据库）</p>
-<p><a href="https://www.cnblogs.com/yechanglv/p/6923147.html" target="_blank" rel="noopener">https://www.cnblogs.com/yechanglv/p/6923147.html</a></p>
-]]></content>
-  </entry>
-  <entry>
     <title>XXE - 实体注入</title>
     <url>/2020/04/05/XXE%20-%20%E5%AE%9E%E4%BD%93%E6%B3%A8%E5%85%A5/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、什么是XXE"><a href="#一、什么是XXE" class="headerlink" title="一、什么是XXE?"></a>一、什么是XXE?</h1><p>​        <strong>XXE = XML External Entity 即外部实体，从安全角度理解成XML External Entity attack XML外部实体注入攻击</strong></p>
+    <content><![CDATA[<h1 id="一、什么是XXE"><a href="#一、什么是XXE" class="headerlink" title="一、什么是XXE?"></a>一、什么是XXE?</h1><p>​        <strong>XXE = XML External Entity 即外部实体，从安全角度理解成XML External Entity attack XML外部实体注入攻击</strong></p>
 <p><strong>典型的攻击如下：</strong></p>
 <p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200324121519.png" alt="" loading="lazy"></p>
 <p>定义实体必须写在DTD部分</p>
@@ -668,103 +668,9 @@
 ]]></content>
   </entry>
   <entry>
-    <title>Hello World</title>
-    <url>/2020/04/05/hello-world/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-]]></content>
-  </entry>
-  <entry>
-    <title>php面向对象1</title>
-    <url>/2020/05/28/php%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="类和对象的关系"><a href="#类和对象的关系" class="headerlink" title="类和对象的关系"></a>类和对象的关系</h1><h2 id="类的概念"><a href="#类的概念" class="headerlink" title="类的概念"></a>类的概念</h2><p>​         类就是==分类、类别、模板、概念==等，类是无形的、看不见、摸不着，不实际存在的。</p>
-<pre><code>类是==**具有相同属性(特征)和行为(动作)的一组对象的集合**==，它为属于该类的全部对象提供了统一的抽象描述，其内部包括属性和行为两个主要部分。例如：所有在学校学习的人，具有相同的属性：学号、姓名、性别等；具有相同的行为：学习。所以，这些人构成一个类，即学生类。</code></pre><h2 id="对象的概念"><a href="#对象的概念" class="headerlink" title="对象的概念"></a>对象的概念</h2><p>​        客观世界中任何一个事物都可以看成一个对象，对象看得见、摸得着，实际存在的。<br>​        对象是构成系统的基本单位。==任何一个对象都应具有这两个要素：属性(Attribute)和行为(Behavior)。==例如：学生“张三”是一个对象，他有属性：学号、姓名、性别等；行为有：学习、吃饭等。<br>​        对象来自于某个类，对象不能单独存在。==一个类可以产生千千万万个对象。==<br>​        对象和类的关系是，对象是类的实例，类是对象的模板。</p>
-<p>​        ==类是抽象的，几乎不占用内存，而对象是具体的，占用存储空间。==</p>
-<h1 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h1><h2 id="类的定义语法格式"><a href="#类的定义语法格式" class="headerlink" title="类的定义语法格式"></a>类的定义语法格式</h2><p>==类和函数一样，都是代码的封装方式。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528185251.png" alt="" loading="lazy"></p>
-<h2 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528185318.png" alt="" loading="lazy"></p>
-<h1 id="类的成员属性定义"><a href="#类的成员属性定义" class="headerlink" title="类的成员属性定义"></a>类的成员属性定义</h1><h2 id="成员属性介绍"><a href="#成员属性介绍" class="headerlink" title="成员属性介绍"></a>成员属性介绍</h2><p>类的成员属性，就是指某个类具有的公共的特征、特性；</p>
-<p>==类中定义的变量，就是类的成员属性；==</p>
-<p><strong>类的成员属性和普通变量的区别：类的成员属性必须要带==权限修饰符==，而普通变量不需要</strong></p>
-<h2 id="权限修饰符"><a href="#权限修饰符" class="headerlink" title="权限修饰符"></a>权限修饰符</h2><p><strong>==成员属性必须要加权限修改符，否则报错。==</strong></p>
-<p>public(公共权限)：在任何地方都可以访问，主要包括：类外、本类中、子类中都可以访问。</p>
-<p>private(私有权限)：只能在本类中被访问，在类外和子类中都无权访问。</p>
-<p>protected(受保护的权限)：只能在本类中和子类中被访问，在类外不能被访问。</p>
-<p><strong>举例说明</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528185620.png" alt="" loading="lazy"></p>
-<h1 id="类的成员方法定义"><a href="#类的成员方法定义" class="headerlink" title="类的成员方法定义"></a>类的成员方法定义</h1><h2 id="成员方法介绍"><a href="#成员方法介绍" class="headerlink" title="成员方法介绍"></a>成员方法介绍</h2><p>==类的方法，就是某个类的公共的的行为或动作；==</p>
-<p>==类的成员方法，与普通函数一样，都有返回值和参数；==</p>
-<p><strong>==成员方法与普通函数区别：成员方法只能存在于类中，成员方法定义前可以添加访问权限修饰符；==</strong></p>
-<p>提示：==成员方法可以省略权限修饰符，默认访问权限是public。==</p>
-<p><strong>举例说明</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528185837.png" alt="" loading="lazy"></p>
-<h1 id="创建类的实例对象"><a href="#创建类的实例对象" class="headerlink" title="创建类的实例对象"></a>创建类的实例对象</h1><h2 id="实例化对象的含义"><a href="#实例化对象的含义" class="headerlink" title="实例化对象的含义"></a>实例化对象的含义</h2><p>定义类是为了生产对象，如果不生产对象，类就没有意义。</p>
-<p>一个类可以产生千千万万个对象，对象帮我们干活。</p>
-<p>对象实例化：从一个类上来生产对象过程，就是类的实例化。</p>
-<h2 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h2><p>使用new关键字来创建对象。</p>
-<p>==JS创建对象的方法：var today = new Date()==</p>
-<p>==PHP创建对象的方法：$obj = new Student()==</p>
-<p><strong>举例说明</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190015.png" alt="" loading="lazy"></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190026.png" alt="" loading="lazy"></p>
-<h1 id="对象属性操作"><a href="#对象属性操作" class="headerlink" title="对象属性操作"></a>对象属性操作</h1><h2 id="如何访问对象的属性和方法？"><a href="#如何访问对象的属性和方法？" class="headerlink" title="如何访问对象的属性和方法？"></a>如何访问对象的属性和方法？</h2><p>==在JS中，访问对象属性和方法，是通过”<strong>.</strong>“来访问的。例如：window.alert()、arrObj.length==</p>
-<p>==在PHP中，访问对象属性和方法，是通过”<strong>-&gt;</strong>“来访问的。例如：$obj-&gt;name、$obj-&gt;showInfo()==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190205.png" alt="" loading="lazy"></p>
-<h2 id="对象属性的操作"><a href="#对象属性的操作" class="headerlink" title="对象属性的操作"></a>对象属性的操作</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190246.png" alt="" loading="lazy"></p>
-<h1 id="对象方法操作"><a href="#对象方法操作" class="headerlink" title="对象方法操作"></a>对象方法操作</h1><p>对象方法的操作：方法定义、方法调用、传递参数、方法返回值。</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190319.png" alt="" loading="lazy"></p>
-<h1 id="伪变量-this的使用"><a href="#伪变量-this的使用" class="headerlink" title="伪变量$this的使用"></a>伪变量$this的使用</h1><h2 id="伪变量-this的含义"><a href="#伪变量-this的含义" class="headerlink" title="伪变量$this的含义"></a>伪变量$this的含义</h2><p>==在JS中，使用this关键字来代替当前对象==，例如：this.src = ‘./a.jpg’</p>
-<p>==在PHP中，使用$this变量来代替当前对象==，例如：$this-&gt;name = ‘张三’</p>
-<p>$this代表当前对象，是到当前对象的一个引用；</p>
-<p>$this更像是一个对象指针，指向当前对象；</p>
-<p>$this只能用在对象方法定义中，去调用对象的成员属性或成员方法。</p>
-<p>只有创建对象后，$this变量才存在。类不会自动运行。</p>
-<p><strong>举例说明</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190455.png" alt="" loading="lazy"></p>
-<h1 id="类常量的定义"><a href="#类常量的定义" class="headerlink" title="类常量的定义"></a>类常量的定义</h1><h2 id="类常量介绍"><a href="#类常量介绍" class="headerlink" title="类常量介绍"></a>类常量介绍</h2><p>可以把在类中始终保持不变的值定义为常量，例如：圆周率、班级名称等。</p>
-<p>常量的值必须是一个定值，不能修改，也不能删除；</p>
-<p>类常量就是类的常量，是与类相关的，与对象无关。</p>
-<p>类常量在内存中只有一份，不管创建多少个对象。</p>
-<p>类常量可以极大节省服务器内存，可以被所有对象去共享</p>
-<h2 id="类常量定义和调用格式"><a href="#类常量定义和调用格式" class="headerlink" title="类常量定义和调用格式"></a>类常量定义和调用格式</h2><p>==类常量没有权限，只有属性和方法才会有权限。==</p>
-<p>使用==<strong>const</strong>==来定义类的常量(局部常量)，只能在局部作用域下使用；==define()定义常量是全局常量，在任何地方都可以使用。==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190832.png" alt="" loading="lazy"></p>
-<p><strong>举例说明</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190859.png" alt="" loading="lazy"></p>
-<h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><h2 id="什么是构造方法"><a href="#什么是构造方法" class="headerlink" title="什么是构造方法"></a>什么是构造方法</h2><p>当使用new关键字创建对象时，==第1个自动调用的方法，就是构造方法==；</p>
-<p>构造方法的名称是==固定的==：<strong><code>void __construct ([ mixed $args [, $... ]] )</code></strong></p>
-<p>==构造方法可以带参数，也可以不带参数；构造方法不是必须的，是可选的==；</p>
-<p>==构造方法的作用：对象初始化==。例如：==给对象属性赋值、数据库对象初始化(连接、选择数据库)==</p>
-<p>==构造方法一定是成员方法。==构造方法的权限可以自己指定。</p>
-<p>构造方法一般不需要主动调用，都是自动调用的。</p>
-<p><strong>举例说明</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528191053.png" alt="" loading="lazy"></p>
-<h1 id="析构方法"><a href="#析构方法" class="headerlink" title="析构方法"></a>析构方法</h1><h2 id="什么是析构方法"><a href="#什么是析构方法" class="headerlink" title="什么是析构方法"></a>什么是析构方法</h2><p>==对象销毁前自动调用的方法，就是析构方法==；</p>
-<p>析构方法的名称是==固定的==：<strong><code>void __destruct ( void )</code></strong></p>
-<p>==析构方法不带任何参数==；</p>
-<p>析构方法一定是成员方法。</p>
-<p>==析构方法的作用：垃圾回收工作，例如：断开到MySQL的连接==</p>
-<h2 id="对象何时销毁"><a href="#对象何时销毁" class="headerlink" title="对象何时销毁"></a>对象何时销毁</h2><p><strong>==网页执行完毕时，对象会自动销毁==；</strong></p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528191222.png" alt="" loading="lazy"></p>
-<p>==<strong>使用unset()函数手动销毁对象</strong>==</p>
-<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528191241.png" alt="" loading="lazy"></p>
-]]></content>
-  </entry>
-  <entry>
     <title>变量覆盖</title>
     <url>/2020/05/28/%E5%8F%98%E9%87%8F%E8%A6%86%E7%9B%96/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、什么是变量覆盖？"><a href="#一、什么是变量覆盖？" class="headerlink" title="一、什么是变量覆盖？"></a>一、什么是变量覆盖？</h1><p>​    ==变量覆盖指的是可以用我们的传参值替换程序原有的变量值==</p>
+    <content><![CDATA[<h1 id="一、什么是变量覆盖？"><a href="#一、什么是变量覆盖？" class="headerlink" title="一、什么是变量覆盖？"></a>一、什么是变量覆盖？</h1><p>​    ==变量覆盖指的是可以用我们的传参值替换程序原有的变量值==</p>
 <h4 id="经常导致变量覆盖漏洞场景有"><a href="#经常导致变量覆盖漏洞场景有" class="headerlink" title="经常导致变量覆盖漏洞场景有"></a>经常导致变量覆盖漏洞场景有</h4><ul>
 <li>$$使用不当</li>
 <li>extract()函数使用不当</li>
@@ -854,9 +760,103 @@
 ]]></content>
   </entry>
   <entry>
+    <title>Hello World</title>
+    <url>/2020/04/05/hello-world/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/one-command-deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>php面向对象1</title>
+    <url>/2020/05/28/php%E9%9D%A2%E5%90%91%E5%AF%B9%E8%B1%A11/</url>
+    <content><![CDATA[<h1 id="类和对象的关系"><a href="#类和对象的关系" class="headerlink" title="类和对象的关系"></a>类和对象的关系</h1><h2 id="类的概念"><a href="#类的概念" class="headerlink" title="类的概念"></a>类的概念</h2><p>​         类就是==分类、类别、模板、概念==等，类是无形的、看不见、摸不着，不实际存在的。</p>
+<pre><code>类是==**具有相同属性(特征)和行为(动作)的一组对象的集合**==，它为属于该类的全部对象提供了统一的抽象描述，其内部包括属性和行为两个主要部分。例如：所有在学校学习的人，具有相同的属性：学号、姓名、性别等；具有相同的行为：学习。所以，这些人构成一个类，即学生类。</code></pre><h2 id="对象的概念"><a href="#对象的概念" class="headerlink" title="对象的概念"></a>对象的概念</h2><p>​        客观世界中任何一个事物都可以看成一个对象，对象看得见、摸得着，实际存在的。<br>​        对象是构成系统的基本单位。==任何一个对象都应具有这两个要素：属性(Attribute)和行为(Behavior)。==例如：学生“张三”是一个对象，他有属性：学号、姓名、性别等；行为有：学习、吃饭等。<br>​        对象来自于某个类，对象不能单独存在。==一个类可以产生千千万万个对象。==<br>​        对象和类的关系是，对象是类的实例，类是对象的模板。</p>
+<p>​        ==类是抽象的，几乎不占用内存，而对象是具体的，占用存储空间。==</p>
+<h1 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h1><h2 id="类的定义语法格式"><a href="#类的定义语法格式" class="headerlink" title="类的定义语法格式"></a>类的定义语法格式</h2><p>==类和函数一样，都是代码的封装方式。==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528185251.png" alt="" loading="lazy"></p>
+<h2 id="举例说明"><a href="#举例说明" class="headerlink" title="举例说明"></a>举例说明</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528185318.png" alt="" loading="lazy"></p>
+<h1 id="类的成员属性定义"><a href="#类的成员属性定义" class="headerlink" title="类的成员属性定义"></a>类的成员属性定义</h1><h2 id="成员属性介绍"><a href="#成员属性介绍" class="headerlink" title="成员属性介绍"></a>成员属性介绍</h2><p>类的成员属性，就是指某个类具有的公共的特征、特性；</p>
+<p>==类中定义的变量，就是类的成员属性；==</p>
+<p><strong>类的成员属性和普通变量的区别：类的成员属性必须要带==权限修饰符==，而普通变量不需要</strong></p>
+<h2 id="权限修饰符"><a href="#权限修饰符" class="headerlink" title="权限修饰符"></a>权限修饰符</h2><p><strong>==成员属性必须要加权限修改符，否则报错。==</strong></p>
+<p>public(公共权限)：在任何地方都可以访问，主要包括：类外、本类中、子类中都可以访问。</p>
+<p>private(私有权限)：只能在本类中被访问，在类外和子类中都无权访问。</p>
+<p>protected(受保护的权限)：只能在本类中和子类中被访问，在类外不能被访问。</p>
+<p><strong>举例说明</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528185620.png" alt="" loading="lazy"></p>
+<h1 id="类的成员方法定义"><a href="#类的成员方法定义" class="headerlink" title="类的成员方法定义"></a>类的成员方法定义</h1><h2 id="成员方法介绍"><a href="#成员方法介绍" class="headerlink" title="成员方法介绍"></a>成员方法介绍</h2><p>==类的方法，就是某个类的公共的的行为或动作；==</p>
+<p>==类的成员方法，与普通函数一样，都有返回值和参数；==</p>
+<p><strong>==成员方法与普通函数区别：成员方法只能存在于类中，成员方法定义前可以添加访问权限修饰符；==</strong></p>
+<p>提示：==成员方法可以省略权限修饰符，默认访问权限是public。==</p>
+<p><strong>举例说明</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528185837.png" alt="" loading="lazy"></p>
+<h1 id="创建类的实例对象"><a href="#创建类的实例对象" class="headerlink" title="创建类的实例对象"></a>创建类的实例对象</h1><h2 id="实例化对象的含义"><a href="#实例化对象的含义" class="headerlink" title="实例化对象的含义"></a>实例化对象的含义</h2><p>定义类是为了生产对象，如果不生产对象，类就没有意义。</p>
+<p>一个类可以产生千千万万个对象，对象帮我们干活。</p>
+<p>对象实例化：从一个类上来生产对象过程，就是类的实例化。</p>
+<h2 id="语法格式"><a href="#语法格式" class="headerlink" title="语法格式"></a>语法格式</h2><p>使用new关键字来创建对象。</p>
+<p>==JS创建对象的方法：var today = new Date()==</p>
+<p>==PHP创建对象的方法：$obj = new Student()==</p>
+<p><strong>举例说明</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190015.png" alt="" loading="lazy"></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190026.png" alt="" loading="lazy"></p>
+<h1 id="对象属性操作"><a href="#对象属性操作" class="headerlink" title="对象属性操作"></a>对象属性操作</h1><h2 id="如何访问对象的属性和方法？"><a href="#如何访问对象的属性和方法？" class="headerlink" title="如何访问对象的属性和方法？"></a>如何访问对象的属性和方法？</h2><p>==在JS中，访问对象属性和方法，是通过”<strong>.</strong>“来访问的。例如：window.alert()、arrObj.length==</p>
+<p>==在PHP中，访问对象属性和方法，是通过”<strong>-&gt;</strong>“来访问的。例如：$obj-&gt;name、$obj-&gt;showInfo()==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190205.png" alt="" loading="lazy"></p>
+<h2 id="对象属性的操作"><a href="#对象属性的操作" class="headerlink" title="对象属性的操作"></a>对象属性的操作</h2><p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190246.png" alt="" loading="lazy"></p>
+<h1 id="对象方法操作"><a href="#对象方法操作" class="headerlink" title="对象方法操作"></a>对象方法操作</h1><p>对象方法的操作：方法定义、方法调用、传递参数、方法返回值。</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190319.png" alt="" loading="lazy"></p>
+<h1 id="伪变量-this的使用"><a href="#伪变量-this的使用" class="headerlink" title="伪变量$this的使用"></a>伪变量$this的使用</h1><h2 id="伪变量-this的含义"><a href="#伪变量-this的含义" class="headerlink" title="伪变量$this的含义"></a>伪变量$this的含义</h2><p>==在JS中，使用this关键字来代替当前对象==，例如：this.src = ‘./a.jpg’</p>
+<p>==在PHP中，使用$this变量来代替当前对象==，例如：$this-&gt;name = ‘张三’</p>
+<p>$this代表当前对象，是到当前对象的一个引用；</p>
+<p>$this更像是一个对象指针，指向当前对象；</p>
+<p>$this只能用在对象方法定义中，去调用对象的成员属性或成员方法。</p>
+<p>只有创建对象后，$this变量才存在。类不会自动运行。</p>
+<p><strong>举例说明</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190455.png" alt="" loading="lazy"></p>
+<h1 id="类常量的定义"><a href="#类常量的定义" class="headerlink" title="类常量的定义"></a>类常量的定义</h1><h2 id="类常量介绍"><a href="#类常量介绍" class="headerlink" title="类常量介绍"></a>类常量介绍</h2><p>可以把在类中始终保持不变的值定义为常量，例如：圆周率、班级名称等。</p>
+<p>常量的值必须是一个定值，不能修改，也不能删除；</p>
+<p>类常量就是类的常量，是与类相关的，与对象无关。</p>
+<p>类常量在内存中只有一份，不管创建多少个对象。</p>
+<p>类常量可以极大节省服务器内存，可以被所有对象去共享</p>
+<h2 id="类常量定义和调用格式"><a href="#类常量定义和调用格式" class="headerlink" title="类常量定义和调用格式"></a>类常量定义和调用格式</h2><p>==类常量没有权限，只有属性和方法才会有权限。==</p>
+<p>使用==<strong>const</strong>==来定义类的常量(局部常量)，只能在局部作用域下使用；==define()定义常量是全局常量，在任何地方都可以使用。==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190832.png" alt="" loading="lazy"></p>
+<p><strong>举例说明</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528190859.png" alt="" loading="lazy"></p>
+<h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><h2 id="什么是构造方法"><a href="#什么是构造方法" class="headerlink" title="什么是构造方法"></a>什么是构造方法</h2><p>当使用new关键字创建对象时，==第1个自动调用的方法，就是构造方法==；</p>
+<p>构造方法的名称是==固定的==：<strong><code>void __construct ([ mixed $args [, $... ]] )</code></strong></p>
+<p>==构造方法可以带参数，也可以不带参数；构造方法不是必须的，是可选的==；</p>
+<p>==构造方法的作用：对象初始化==。例如：==给对象属性赋值、数据库对象初始化(连接、选择数据库)==</p>
+<p>==构造方法一定是成员方法。==构造方法的权限可以自己指定。</p>
+<p>构造方法一般不需要主动调用，都是自动调用的。</p>
+<p><strong>举例说明</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528191053.png" alt="" loading="lazy"></p>
+<h1 id="析构方法"><a href="#析构方法" class="headerlink" title="析构方法"></a>析构方法</h1><h2 id="什么是析构方法"><a href="#什么是析构方法" class="headerlink" title="什么是析构方法"></a>什么是析构方法</h2><p>==对象销毁前自动调用的方法，就是析构方法==；</p>
+<p>析构方法的名称是==固定的==：<strong><code>void __destruct ( void )</code></strong></p>
+<p>==析构方法不带任何参数==；</p>
+<p>析构方法一定是成员方法。</p>
+<p>==析构方法的作用：垃圾回收工作，例如：断开到MySQL的连接==</p>
+<h2 id="对象何时销毁"><a href="#对象何时销毁" class="headerlink" title="对象何时销毁"></a>对象何时销毁</h2><p><strong>==网页执行完毕时，对象会自动销毁==；</strong></p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528191222.png" alt="" loading="lazy"></p>
+<p>==<strong>使用unset()函数手动销毁对象</strong>==</p>
+<p><img src="https://gitee.com/ghat/blogimage/raw/master/img/20200528191241.png" alt="" loading="lazy"></p>
+]]></content>
+  </entry>
+  <entry>
     <title>支付漏洞</title>
     <url>/2020/05/28/%E6%94%AF%E4%BB%98%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、快捷支付原理"><a href="#一、快捷支付原理" class="headerlink" title="一、快捷支付原理"></a>一、快捷支付原理</h1><p><strong>商户网站接入支付结果有两种方式，一种是通过浏览器进行跳转通知，一种是服务器端异步通知</strong></p>
+    <content><![CDATA[<h1 id="一、快捷支付原理"><a href="#一、快捷支付原理" class="headerlink" title="一、快捷支付原理"></a>一、快捷支付原理</h1><p><strong>商户网站接入支付结果有两种方式，一种是通过浏览器进行跳转通知，一种是服务器端异步通知</strong></p>
 <ul>
 <li><p>§浏览器跳转（不常见）</p>
 <ul>
@@ -934,7 +934,7 @@
   <entry>
     <title>文件上传</title>
     <url>/2020/05/28/%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><h2 id="文件上传原理"><a href="#文件上传原理" class="headerlink" title="文件上传原理"></a>文件上传原理</h2><p>上传文件，就是将文件从浏览器端传到服务器端；</p>
+    <content><![CDATA[<h1 id="文件上传"><a href="#文件上传" class="headerlink" title="文件上传"></a>文件上传</h1><h2 id="文件上传原理"><a href="#文件上传原理" class="headerlink" title="文件上传原理"></a>文件上传原理</h2><p>上传文件，就是将文件从浏览器端传到服务器端；</p>
 <p>上传文件，必须使用<code>&lt;form&gt;</code>标记来向服务器端发数据；</p>
 <p>上传文件，<code>&lt;form&gt;</code>标记的method属性值必须是POST；</p>
 <p>上传文件，<code>&lt;form&gt;</code>标记的enctype属性值必须是multipart/form-data；</p>
@@ -1000,7 +1000,7 @@
   <entry>
     <title>越权 - 通过修改参数获取管理员权限</title>
     <url>/2020/05/28/%E8%B6%8A%E6%9D%83%20-%20%E9%80%9A%E8%BF%87%E4%BF%AE%E6%94%B9%E5%8F%82%E6%95%B0%E8%8E%B7%E5%8F%96%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、什么是越权？"><a href="#一、什么是越权？" class="headerlink" title="一、什么是越权？"></a>一、什么是越权？</h1><h3 id="越权漏洞的概念："><a href="#越权漏洞的概念：" class="headerlink" title="越权漏洞的概念："></a>越权漏洞的概念：</h3><p>​        越权漏洞是一种很常见的逻辑安全漏洞。是由于服务器端对客户提出的数据操作请求过分信任，忽略了对该用户操作权限的判定，导致修改相关参数就可以拥有了其他账户的增、删、查、改功能，从而导致越权漏洞。</p>
+    <content><![CDATA[<h1 id="一、什么是越权？"><a href="#一、什么是越权？" class="headerlink" title="一、什么是越权？"></a>一、什么是越权？</h1><h3 id="越权漏洞的概念："><a href="#越权漏洞的概念：" class="headerlink" title="越权漏洞的概念："></a>越权漏洞的概念：</h3><p>​        越权漏洞是一种很常见的逻辑安全漏洞。是由于服务器端对客户提出的数据操作请求过分信任，忽略了对该用户操作权限的判定，导致修改相关参数就可以拥有了其他账户的增、删、查、改功能，从而导致越权漏洞。</p>
 <h3 id="越权一般分为水平越权和垂直越权："><a href="#越权一般分为水平越权和垂直越权：" class="headerlink" title="越权一般分为水平越权和垂直越权："></a>越权一般分为水平越权和垂直越权：</h3><ul>
 <li><p>水平越权是指==相同权限下不同的用户可以互相访问==</p>
 </li>
@@ -1038,7 +1038,7 @@
   <entry>
     <title>验证码绕过、密码找回漏洞</title>
     <url>/2020/05/28/%E9%AA%8C%E8%AF%81%E7%A0%81%E7%BB%95%E8%BF%87%E3%80%81%E5%AF%86%E7%A0%81%E6%89%BE%E5%9B%9E%E6%BC%8F%E6%B4%9E/</url>
-    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script><h1 id="一、验证码作用"><a href="#一、验证码作用" class="headerlink" title="一、验证码作用"></a>一、验证码作用</h1><ul>
+    <content><![CDATA[<h1 id="一、验证码作用"><a href="#一、验证码作用" class="headerlink" title="一、验证码作用"></a>一、验证码作用</h1><ul>
 <li>验证码（CAPTCHA）是“Completely Automated Public Turing test to tell Computers and Humans Apart”（全自动区分计算机和人类的图灵测试）的缩写，<strong>是一种区分用户是计算机还是人的公共全自动程序。</strong></li>
 <li><strong>验证码分两种：</strong><ol>
 <li>验证码是一种区分用户是计算机还是人的公共全自动程序（比如登陆的时候要填写的）</li>
@@ -2562,5 +2562,13 @@
 <p>​        1. 索引数组；</p>
 <p>​        2. 数组是已经排好序的了。</p>
 ]]></content>
+  </entry>
+  <entry>
+    <title>PHP基本语法规则</title>
+    <url>/2020/06/08/categories/</url>
+    <content><![CDATA[<link rel="stylesheet" class="aplayer-secondary-style-marker" href="\assets\css\APlayer.min.css"><script src="\assets\js\APlayer.min.js" class="aplayer-secondary-script-marker"></script>]]></content>
+      <categories>
+        <category>PHP</category>
+      </categories>
   </entry>
 </search>
